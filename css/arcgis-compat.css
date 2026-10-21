@@ -1,0 +1,14 @@
+/*
+ * Reserved for adjustments verified in the ArcGIS Hub publishing environment.
+ * No overrides are needed for this standalone preview yet.
+ *
+ * When preparing text cards:
+ * - Keep the .data-portal wrapper around our components to scope their styles.
+ * - Resolve image paths to URLs accessible from Hub.
+ * - Check Hub's surrounding row width, spacing, inherited styles, and fonts.
+ * - Use Hub's header/footer settings for the shared site shell as appropriate.
+ * - Add a documented, narrowly scoped override here only after checking in Hub.
+ *
+ * Loading this file does not establish Hub compatibility. The finished text-card
+ * sections must be checked in Hub when the owner requests that publishing step.
+ */

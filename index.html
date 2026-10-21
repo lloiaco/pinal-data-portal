@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pinal County Economic &amp; Workforce Data Portal</title>
+    <meta name="description" content="Explore Pinal County economic conditions, workforce outcomes, priority industries, and regional labor-market tools.">
+
+    <!-- These match the fonts used by the published ArcGIS Hub homepage. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@500;600;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Theme supplies named values; components use those values. -->
+    <link rel="stylesheet" href="css/pinal-theme.css">
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Reserved for verified Hub-specific adjustments; currently comments only. -->
+    <link rel="stylesheet" href="css/arcgis-compat.css">
+  </head>
+  <body class="data-portal" id="top">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- Shared header pattern. Keep future pages consistent with this markup. -->
+    <header class="site-header">
+      <div class="portal-container site-header__inner">
+        <a class="site-brand" href="index.html" aria-label="Pinal County Economic and Workforce Data Portal home">
+          <img class="site-brand__logo" src="images/SVG%20Hub%20-%20Gold%201.png" alt="" width="50" height="50">
+          <span class="site-brand__text">
+            <span class="site-brand__county">Pinal County</span>
+            <span class="site-brand__name">Economic &amp; Workforce Data Portal</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <details class="topic-menu">
+            <summary class="topic-menu__toggle">Explore topics <span class="topic-menu__arrow" aria-hidden="true">▾</span></summary>
+            <ul class="topic-menu__list">
+              <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">Economic Indicators</a></li>
+              <li><a href="https://workforce-performance-pinal.hub.arcgis.com/">ARIZONA@WORK Pinal County Performance</a></li>
+              <li class="topic-menu__unavailable">
+                <span>Targeted Industries</span>
+                <span class="topic-menu__status">In development</span>
+              </li>
+              <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">H3 Occupation Analysis</a></li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <!-- Hero means the introductory section at the top of a page. -->
+      <section class="hero" id="explore-data" aria-labelledby="portal-heading">
+        <div class="portal-container hero__inner">
+          <div class="hero__panel">
+            <p class="eyebrow">Public data &bull; Regional insight</p>
+            <h1 id="portal-heading">Explore Pinal County through data.</h1>
+            <p class="hero__description">Explore economic conditions, workforce outcomes, priority industries, and regional labor-market tools—all in one place.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="topics" id="topics" aria-labelledby="topics-heading">
+        <div class="portal-container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Explore by topic</p>
+              <h2 id="topics-heading">Find the data product you need</h2>
+            </div>
+            <p class="section-heading__description">Each topic brings related dashboards, indicators, and tools together under one clear entry point.</p>
+          </div>
+
+          <!-- The same card structure works for each topic. SVG icons need no library. -->
+          <div class="topic-grid">
+            <article class="topic-card" aria-labelledby="economic-heading">
+              <div class="topic-card__top">
+                <svg class="topic-card__icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M3 3v18h18M6 15l5-5 4 3 6-8M17 5h4v4"/>
+                </svg>
+                <span class="topic-card__label">Regional conditions</span>
+              </div>
+              <h3 id="economic-heading">Economic Indicators</h3>
+              <p class="topic-card__description">Explore population, jobs, unemployment, GDP, earnings, and commuting patterns across Pinal County.</p>
+              <a class="topic-card__link" href="https://key-performance-indicators-pinal.hub.arcgis.com/">
+                <span>Explore economic indicators</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <article class="topic-card" aria-labelledby="workforce-heading">
+              <div class="topic-card__top">
+                <svg class="topic-card__icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <circle cx="9" cy="7" r="3"/>
+                  <path d="M3 21v-3a6 6 0 0 1 12 0v3M16 4a3 3 0 0 1 0 6M18 13a5 5 0 0 1 3 5v3"/>
+                </svg>
+                <span class="topic-card__label">ARIZONA@WORK outcomes</span>
+              </div>
+              <h3 id="workforce-heading">ARIZONA@WORK Pinal County Performance</h3>
+              <p class="topic-card__description">Review public workforce-program activity, outcomes, and performance measures.</p>
+              <a class="topic-card__link" href="https://workforce-performance-pinal.hub.arcgis.com/">
+                <span>View workforce performance</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <article class="topic-card" aria-labelledby="industries-heading">
+              <div class="topic-card__top">
+                <svg class="topic-card__icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M3 21V5h5v8l6-4v4l7-4v12ZM6 8h0M6 11h0M7 17h2M13 17h2M18 17h0"/>
+                </svg>
+                <span class="topic-card__label">Industry intelligence</span>
+              </div>
+              <h3 id="industries-heading">Targeted Industries</h3>
+              <p class="topic-card__description">Planned profiles will explore Pinal County’s priority industries, workforce needs, and competitive position.</p>
+              <!-- A status replaces the link until supporting content exists. -->
+              <p class="topic-card__status">In development</p>
+            </article>
+
+            <article class="topic-card" aria-labelledby="h3-heading">
+              <div class="topic-card__top">
+                <svg class="topic-card__icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <circle cx="10" cy="10" r="7"/>
+                  <path d="m15 15 6 6M6 12l3-4 3 2 2-3"/>
+                </svg>
+                <span class="topic-card__label">Occupation analysis</span>
+              </div>
+              <h3 id="h3-heading">H3 Occupation Analysis</h3>
+              <p class="topic-card__description">Identify occupations that are high demand, high skill, and high wage using projected job openings, education and training requirements, and earnings.</p>
+              <a class="topic-card__link" href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">
+                <span>Explore H3 occupation analysis</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="question-directory" id="find-answers" aria-labelledby="answers-heading">
+        <div class="portal-container">
+          <details class="question-directory__disclosure">
+            <summary class="question-directory__summary">
+              <h2 id="answers-heading">
+                <span class="eyebrow">Not sure where to begin?</span>
+                <span>Start with the question</span>
+              </h2>
+              <span class="question-directory__control">
+                <span>Browse Questions</span>
+                <span class="question-directory__icon" aria-hidden="true"></span>
+              </span>
+            </summary>
+
+            <!-- One dropdown contains the direct question links; closed by default. -->
+            <div class="question-directory__grid">
+              <section class="question-group" aria-labelledby="economic-questions-heading">
+                <h3 id="economic-questions-heading">Economic Indicators</h3>
+                <ul class="question-group__links">
+                  <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">How is Pinal County’s economy changing?</a></li>
+                  <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">What are the latest employment and unemployment trends?</a></li>
+                  <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">How many people live in Pinal County and its cities and towns?</a></li>
+                  <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">How are the populations of Pinal County and its cities and towns projected to grow?</a></li>
+                </ul>
+              </section>
+
+              <section class="question-group" aria-labelledby="workforce-questions-heading">
+                <h3 id="workforce-questions-heading">ARIZONA@WORK Pinal County Performance</h3>
+                <ul class="question-group__links">
+                  <li><a href="https://federal-performance-measures-pinal.hub.arcgis.com/">How are workforce programs performing on federal measures?</a></li>
+                  <li><a href="https://workforce-outcomes-pinal.hub.arcgis.com/">How many people are participating in workforce programs?</a></li>
+                  <li><a href="https://workforce-outcomes-pinal.hub.arcgis.com/">What training are participants receiving?</a></li>
+                  <li><a href="https://workforce-outcomes-pinal.hub.arcgis.com/">What employment and earnings outcomes are participants achieving?</a></li>
+                </ul>
+              </section>
+
+              <section class="question-group" aria-labelledby="industry-questions-heading">
+                <h3 id="industry-questions-heading">Targeted Industries</h3>
+                <p class="question-group__note">In development</p>
+                <ul class="question-group__links question-group__planned">
+                  <li>What are Pinal County’s targeted industries?</li>
+                  <li>Which occupations support these industries?</li>
+                  <li>What skills and training do these industries need?</li>
+                </ul>
+              </section>
+
+              <section class="question-group" aria-labelledby="occupation-questions-heading">
+                <h3 id="occupation-questions-heading">H3 Occupation Analysis</h3>
+                <ul class="question-group__links">
+                  <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">Which occupations are projected to have the most job openings?</a></li>
+                  <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">Which occupations offer higher wages?</a></li>
+                  <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">What education and training do different occupations require?</a></li>
+                  <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">Which occupations meet Pinal County’s high-demand, high-skill, and high-wage criteria?</a></li>
+                </ul>
+              </section>
+            </div>
+          </details>
+        </div>
+      </section>
+      <section class="about" id="about" aria-labelledby="about-heading">
+        <div class="portal-container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">About the portal</p>
+              <h2 id="about-heading">Public data for better regional decisions.</h2>
+            </div>
+            <p class="section-heading__description">This portal is maintained by the Pinal County Economic and Workforce Development Department. It provides a single, consistent entry point to the department’s public dashboards, indicators, analytical tools, and research products.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Shared footer pattern, based on the existing ArcGIS homepage. -->
+    <footer class="site-footer">
+      <div class="portal-container site-footer__inner">
+        <div class="site-footer__identity">
+          <p class="site-footer__copyright">&copy; 2026 Pinal County, Arizona</p>
+          <p class="site-footer__department">Economic &amp; Workforce Development Department</p>
+        </div>
+        <nav class="site-footer__links" aria-label="Footer navigation">
+          <a href="https://www.pinal.gov/1849/Economic-Workforce-Development">Department Home</a>
+          <a href="https://www.pinal.gov/153/Accessibility">Accessibility</a>
+          <a href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

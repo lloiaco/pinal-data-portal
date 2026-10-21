@@ -1,0 +1,5 @@
+# Local Python testing environment and generated browser artifacts.
+.venv/
+.browser-checks/
+__pycache__/
+*.pyc

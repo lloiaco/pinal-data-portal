@@ -1,0 +1,52 @@
+/*
+ * County branding lives here. A CSS custom property is a named value:
+ * --pinal-blue names the color; --color-text describes its purpose.
+ * Keeping both lets another project reuse the components with its own theme.
+ */
+.data-portal {
+  /* Official County palette. */
+  --pinal-blue: #2f4a58;
+  --pinal-teal: #549898;
+  --pinal-gold: #d29040;
+  --pinal-tan: #d6cbaf;
+
+  /* Existing variations, named once rather than repeated in components. */
+  /* Text contrast: 4.87:1 on Pinal cream and 5.08:1 on white. */
+  --pinal-teal-dark: #427777;
+  --pinal-teal-light: #b8dada;
+  --pinal-slate: #526772;
+  --pinal-sand: #f1ede3;
+  --pinal-cream: #fcfaf6;
+  --neutral-white: #ffffff;
+
+  /* Purpose names: these are the values reusable components consume. */
+  --color-text: var(--pinal-blue);
+  --color-text-muted: var(--pinal-slate);
+  --color-link: var(--pinal-teal-dark);
+  --color-eyebrow: var(--pinal-teal-dark);
+  --color-page: var(--neutral-white);
+  --color-surface-soft: var(--pinal-cream);
+  --color-surface-warm: var(--pinal-sand);
+  --color-header: var(--pinal-blue);
+  --color-on-header: var(--pinal-cream);
+  --color-on-dark-accent: var(--pinal-teal-light);
+  --color-accent: var(--pinal-gold);
+  --color-border: var(--pinal-tan);
+  --color-card-accent: var(--pinal-teal);
+  --color-focus: var(--pinal-blue);
+  --color-focus-on-header: var(--pinal-cream);
+
+  /* Solid white keeps dark-teal text contrast consistent over the map. */
+  --color-hero-panel: var(--neutral-white);
+  /* Transparency uses existing palette colors, rather than new solid shades. */
+  --color-hero-border: rgb(255 255 255 / 70%);
+  --color-header-divider: rgb(252 250 246 / 25%);
+  --shadow-hero: 0 12px 32px rgb(47 74 88 / 10%);
+  --shadow-card: 0 5px 14px rgb(47 74 88 / 8%);
+  --shadow-card-active: 0 8px 20px rgb(47 74 88 / 14%);
+
+  --font-body: "Roboto", Arial, sans-serif;
+  --font-heading: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  --image-hero-background: url("../images/Pinal%20Map.png");
+}
+
