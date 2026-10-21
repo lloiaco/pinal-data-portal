@@ -2,9 +2,13 @@
 
 A multipage portal developed incrementally with plain HTML and CSS. GitHub Pages will provide development previews; ArcGIS Hub remains the work publishing destination. See [PROJECT_BRIEF.md](PROJECT_BRIEF.md) for decisions and proposals.
 
+Live development preview: [lloiaco.github.io/pinal-data-portal](https://lloiaco.github.io/pinal-data-portal/). The owner committed and pushed the homepage and enabled Pages from `main` / repository root. The live page was checked at desktop and phone widths.
+
+ArcGIS handoff: [paste files and placement guide](arcgis/homepage/README.md). Six sections are prepared, with separate header/footer CSS and an assembly preview. They have not been saved or published in ArcGIS.
+
 ## Current increment
 
-The local homepage contains the header, introduction, four topic cards, question dropdown, About section, and footer. Its logo, fonts, blue-and-gold header, and topic-card pattern come from the existing site. The supplied `Pinal Map.png` provides the introductory background; the published source references a different image resource, so this is a local adaptation rather than a verified visual match.
+The local homepage contains the header, introduction, four topic cards, question dropdown, About section, and footer. Its logo, fonts, blue-and-gold header, and topic-card pattern come from the existing site. The supplied `Pinal Map.png` provides the introductory background. The source site calls that resource `Group 26 (2).png`; a later SHA-256 comparison confirmed it is identical to the local map.
 
 The header has a linked County logo and portal name plus one "Explore topics" dropdown, replacing the three homepage section links. It uses native `details`/`summary`, starts closed, and links to the live Economic Indicators, Workforce Performance, and H3 pages. Targeted Industries appears as non-linked text marked "In development". On desktop the dropdown appears beneath its toggle; on narrow screens it expands within the header. Click the toggle again to close it. Breadcrumbs will be added when interior pages are developed.
 
@@ -75,7 +79,7 @@ Run the full verification from the repository terminal:
 
 It downloads the pinned axe checker into ignored `.browser-checks/` on its first run, uses installed Edge, reads public link destinations, and writes `verification.json`, an accessibility-tree snapshot, and screenshots there. axe is testing software only and is not loaded by the website. Native zoom captures use viewport screenshots because Playwright full-page screenshots can crop at native zoom levels.
 
-Screen-reader announcements are untested at the owner's request. Safari and Firefox were not tested. ArcGIS Hub integration and the actual GitHub Pages deployment require checks in those environments later. Automated results do not establish full accessibility conformance. Per the owner's instruction, no commit, push, or GitHub Pages configuration was performed; those steps will be done by the owner with guidance.
+Screen-reader announcements are untested at the owner's request. Safari and Firefox were not tested. Automated results do not establish full accessibility conformance. The assistant paused before Git operations; the owner subsequently committed, pushed, and enabled GitHub Pages with guidance. The live deployment passed the basic desktop and phone browser checks. The ArcGIS export's in-memory Hub-style preview passed, but editor sanitization and the actual pasted/saved layout still need verification.
 
 References: [Playwright Python installation](https://playwright.dev/python/docs/intro), [using installed Edge](https://playwright.dev/python/docs/browsers#google-chrome--microsoft-edge).
 
@@ -86,7 +90,10 @@ References: [Playwright Python installation](https://playwright.dev/python/docs/
 | `index.html` | Page content, meaningful HTML structure, and links. |
 | `css/pinal-theme.css` | County colors, fonts, image choice, and purpose-based design values. |
 | `css/components.css` | Reusable layout, header, introduction, topic cards, question dropdown, About, footer, responsive rules, and keyboard focus styling. |
-| `css/arcgis-compat.css` | Reserved for documented Hub adjustments; currently comments only. |
+| `css/arcgis-compat.css` | Scoped Hub integration rules used by generated exports; inactive on the standalone page. |
+| `arcgis/homepage/` | Six paste-ready sections, separate header/footer CSS, placement guide, and assembly preview. |
+| `tools/export_arcgis.py` | Standard-library Python helper that regenerates the ArcGIS copies from maintained source. |
+| `tools/check_arcgis_export.py` | Checks fragments, local assembly, and a read-only in-memory assembly against public Hub styles. |
 | `images/` | Owner-supplied images, with original filenames preserved. |
 
 Load the theme before the components and compatibility file. The `.data-portal` class scopes the styles: it is on the standalone page's body and will need a wrapper around exported text-card content.
@@ -111,14 +118,14 @@ CSS custom properties are named values. For example:
 | `pinal-teal-dark` | `#427777` | Eyebrows, card labels, and links on white or Pinal cream. |
 | `pinal-teal-light` | `#b8dada` | Eyebrow and disclosure control on the blue question header. |
 | `pinal-sand` | `#f1ede3` | Warm section background, reserved for later sections. |
-| `pinal-cream` | `#fcfaf6` | Soft background and text on the blue header. |
-| `neutral-white` | `#ffffff` | Page background. |
+| `pinal-cream` | `#fcfaf6` | Soft backgrounds; not used for text. |
+| `neutral-white` | `#ffffff` | Page background and primary text on blue surfaces. |
 
 Transparency and shadows use those palette colors. Dark teal was updated from `#477f7f` to `#427777`, providing about 4.87:1 contrast on Pinal cream and 5.08:1 on white. The introductory panel remains solid white. The hero description uses Pinal blue. Card descriptions use the existing site's softer slate (`#526772`), named `pinal-slate` and applied through `color-text-muted`.
 
 The typography hierarchy uses a 0.875rem hero eyebrow (14px at the default root size), 0.6875rem section eyebrow (11px), 0.6875rem card label (11px), and 0.8125rem card description (13px). These are explicit visual tiers rather than automatic proportions of the following headings. Smaller card labels carry supporting context; the topic names remain larger headings.
 
-Source checks confirmed that local files and anchors resolve and that the CSS custom properties are defined. Blue text on white measures about 9.37:1; cream text on the blue header measures about 8.99:1. These contrast calculations do not replace browser, keyboard, mobile, or ArcGIS Hub verification, which remain pending.
+Source checks confirmed that local files and anchors resolve and that the CSS custom properties are defined. Blue text on white and white text on blue measure about 9.37:1. At the owner's request, cream is reserved for backgrounds: the shared text color on blue is now white, including the header, question heading, and footer copyright. The later browser and keyboard checks are recorded above; actual editor/published Hub integration and screen-reader announcements remain unverified.
 
 ## Accessibility reference
 
@@ -130,4 +137,4 @@ The current source includes meaningful headings, descriptive links, keyboard foc
 
 Styles are shared through the same CSS files. Header HTML currently lives in `index.html`; there is only one local page, so automatic header/footer inclusion is not needed yet. Before adding another page, choose and document how shared markup will be maintained. No JavaScript injection or build system has been introduced.
 
-When a page is complete and the owner requests it, prepare its sections for ArcGIS Hub text cards. Hub row settings, shared headers, asset URLs, and CSS behavior require their own verification.
+The homepage's ArcGIS sections are generated by `py tools/export_arcgis.py`. This helper is an export utility, not a website build requirement; it uses Python's standard library and adds no framework. Each Text card has one scoped style block; header/footer HTML and CSS have separate files for Hub's editors. See the [placement guide](arcgis/homepage/README.md) for row backgrounds, the verified ArcGIS-hosted map/logo, theme settings, and post-paste checks. The script preserves maintained source and leaves the placement guide intact when regenerating.

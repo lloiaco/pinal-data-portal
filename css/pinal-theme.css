@@ -28,13 +28,13 @@
   --color-surface-soft: var(--pinal-cream);
   --color-surface-warm: var(--pinal-sand);
   --color-header: var(--pinal-blue);
-  --color-on-header: var(--pinal-cream);
+  --color-on-header: var(--neutral-white);
   --color-on-dark-accent: var(--pinal-teal-light);
   --color-accent: var(--pinal-gold);
   --color-border: var(--pinal-tan);
   --color-card-accent: var(--pinal-teal);
   --color-focus: var(--pinal-blue);
-  --color-focus-on-header: var(--pinal-cream);
+  --color-focus-on-header: var(--neutral-white);
 
   /* Solid white keeps dark-teal text contrast consistent over the map. */
   --color-hero-panel: var(--neutral-white);

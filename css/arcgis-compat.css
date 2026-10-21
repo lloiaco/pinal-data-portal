@@ -1,14 +1,50 @@
 /*
- * Reserved for adjustments verified in the ArcGIS Hub publishing environment.
- * No overrides are needed for this standalone preview yet.
- *
- * When preparing text cards:
- * - Keep the .data-portal wrapper around our components to scope their styles.
- * - Resolve image paths to URLs accessible from Hub.
- * - Check Hub's surrounding row width, spacing, inherited styles, and fonts.
- * - Use Hub's header/footer settings for the shared site shell as appropriate.
- * - Add a documented, narrowly scoped override here only after checking in Hub.
- *
- * Loading this file does not establish Hub compatibility. The finished text-card
- * sections must be checked in Hub when the owner requests that publishing step.
+ * Integration rules apply only to the generated hub-portal--* wrappers.
+ * The standalone page has no such wrappers, so these rules do not affect it.
+ * Hub's editor sanitization and row settings still need a check after paste.
  */
+
+/* Hub supplies the introductory background through its Row settings. */
+.data-portal.hub-portal--intro,
+.data-portal.hub-portal--intro .hero {
+  background-color: transparent;
+}
+
+.data-portal.hub-portal--intro .hero {
+  background-image: none;
+}
+
+/* Preserve semantic heading colors instead of inheriting Hub's heading theme. */
+.data-portal[class*="hub-portal--"] h1,
+.data-portal[class*="hub-portal--"] h2,
+.data-portal[class*="hub-portal--"] h3 {
+  color: inherit;
+}
+
+/* Hub's accessibility link styles can add important underline declarations. */
+.data-portal.hub-portal--header .site-nav {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.data-portal[class*="hub-portal--"] .site-brand {
+  color: var(--color-on-header) !important;
+  text-decoration: none !important;
+}
+
+.data-portal[class*="hub-portal--"] .topic-menu__list a {
+  color: var(--color-text) !important;
+}
+
+.data-portal[class*="hub-portal--"] .topic-card__link {
+  text-decoration: none !important;
+}
+
+.data-portal[class*="hub-portal--"] .topic-card__link span:first-child {
+  text-decoration: underline !important;
+}
+
+.data-portal[class*="hub-portal--"] .site-footer__links a {
+  color: var(--color-on-dark-accent) !important;
+}

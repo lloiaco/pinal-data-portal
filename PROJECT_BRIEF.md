@@ -33,6 +33,8 @@ The portal is a public information resource for Pinal County Economic and Workfo
 
 ## Branding and existing ArcGIS Hub theme
 
+Current refinement: the owner requested that no text use Pinal cream. Primary text on blue surfaces now uses white (`#ffffff`), including the header, question heading, and footer copyright; existing light-teal accents remain. Cream remains a background color. The theme values below record the original screenshot, rather than superseding this refinement. ArcGIS exports and the placement guide have been updated to match.
+
 The owner supplied these County colors:
 
 | Color name | Hex value |
@@ -121,8 +123,8 @@ The exact questions, supporting page groupings, URLs, navigation labels, and lay
 - `index.html` contains this initial page increment, with no JavaScript, framework, or build tool.
 - `css/components.css` holds reusable components, responsive layout rules, and keyboard focus styling.
 - `css/pinal-theme.css` holds the named palette, purpose-based values, fonts, and introductory background image choice.
-- `css/arcgis-compat.css` is reserved for verified Hub adjustments and currently contains comments only.
-- The supplied logo and map image are used locally. The source homepage's introductory background references `Group 26 (2).png`; the supplied map is a local adaptation, not a verified match to that resource.
+- `css/arcgis-compat.css` initially contained comments only; it now contains scoped integration rules for the generated Hub wrappers.
+- The supplied logo and map image are used locally. The source homepage calls the map `Group 26 (2).png`; during export preparation, its SHA-256 hash was confirmed identical to local `Pinal Map.png`.
 - The live homepage source was retrieved and decoded successfully. Its text-card HTML/CSS, header/footer, theme, and row configuration were inspected. Rendered appearance and Hub behavior have not yet been verified.
 - Header navigation initially linked to local sections; the approved topic dropdown below replaces those links. About and the footer were added in the later homepage completion increment below.
 - Shared CSS scopes to `.data-portal` to support later text-card preparation without styling unrelated Hub content.
@@ -189,6 +191,17 @@ The exact questions, supporting page groupings, URLs, navigation labels, and lay
 - Screen-reader listening tests are skipped at the owner's request. Safari/Firefox and Hub integration remain untested. Deployment verification must follow the owner's eventual GitHub Pages setup.
 - No commits, pushes, or GitHub Pages configuration changes were performed.
 
+### Confirmed GitHub publication and ArcGIS handoff
+
+- The owner staged, committed, and pushed the initial homepage using Bash, then enabled GitHub Pages from `main` and the repository root with guidance. The live preview is `https://lloiaco.github.io/pinal-data-portal/`.
+- Verified the live deployment at desktop and phone widths: HTTP 200, styles and images loaded, dropdowns worked, and there was no horizontal overflow. The owner retains control of future commit/push and publishing steps unless explicitly delegated.
+- At the owner's request, prepared `arcgis/homepage/` with six sections: custom header, introduction Text card, topic-card Text card, question dropdown Text card, About Text card, and custom footer. Header/footer have separate HTML and CSS files; each Text card has one scoped style block.
+- Added `tools/export_arcgis.py`, using Python's standard library to regenerate the copies from maintained HTML/CSS. It is not required to run the standalone website. The folder includes an assembly preview, manifest, and a placement guide that is not overwritten by regeneration.
+- The map and logo reuse the existing public ArcGIS homepage item's resources; both were hash-verified against local files. No image or stylesheet URL in the paste files depends on GitHub Pages.
+- Adapted inline SVG card icons to Hub-supported Calcite icons, made the hero background a Hub Row setting, used an absolute ArcGIS home URL, and made Back to top work with Hub's fixed header. Hub supplies its own main landmark and skip-link shell.
+- Testing against the public Hub styles identified a cream navigation background that hid cream text; `css/arcgis-compat.css` now corrects it only for exported header wrappers. These rules do not alter the standalone page.
+- Export validation passed at 320, 390, 768, and 1280px. A read-only in-memory assembly against the current public Hub shell also passed key typography/colors, navigation background/visibility, phone layout, and Back to top checks. No ArcGIS content was saved or published. Editor sanitization and actual pasted/saved row configuration remain to be checked by the owner.
+
 ## Setup confirmed on October 21, 2026
 
 - Git is installed locally.
@@ -199,15 +212,12 @@ The exact questions, supporting page groupings, URLs, navigation labels, and lay
 - The remote is `https://github.com/lloiaco/pinal-data-portal.git`.
 - Codex can inspect this local checkout and create project files.
 - GitHub CLI is not installed; it is optional for the initial workflow.
-- Authenticated push access and GitHub Pages settings have not been verified.
-- The first local homepage increment has been added. No framework, build tool, or deployment configuration has been introduced.
+- The owner successfully pushed to GitHub and configured Pages; the live page was verified.
+- The homepage draft is complete and its ArcGIS handoff is prepared. No website framework or build step has been introduced; optional Python helpers prepare exports and run browser checks.
 
 ## Next steps
 
-1. Open the cloned repository folder in VS Code and verify the local editing workflow.
-2. Commit and push this brief, verifying write access to GitHub.
-3. Review the existing portal design and record reusable visual patterns.
-4. Establish a small project structure and shared design approach.
-5. Develop the homepage and Activity and Outcomes branch in focused increments.
-6. Configure and verify GitHub Pages when there is a first page ready to preview.
-7. At the owner's request, prepare completed pages as ArcGIS Hub text-card sections and verify them in Hub before work publication.
+1. Apply the homepage's custom header, four Text-card rows, and custom footer in Hub, one step at a time using `arcgis/homepage/README.md`.
+2. Verify the saved editor output, row settings, keyboard behavior, narrow layout, and zoom before the owner publishes in Hub.
+3. Guide the owner through a commit/push checkpoint for the new export files when requested.
+4. Develop Workforce Performance and its Activity and Outcomes branch incrementally, choosing shared markup maintenance before adding a second local page.

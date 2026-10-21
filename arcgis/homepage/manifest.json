@@ -1,0 +1,43 @@
+{
+  "home_url": "https://economic-workforce-data-portal-pinal.hub.arcgis.com/",
+  "logo_url": "https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/SVG%20Hub%20-%20Gold%201.png",
+  "row_map_url": "https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/Group%2026%20%282%29.png",
+  "sections": [
+    {
+      "file": "01-header.html",
+      "suffix": "header",
+      "row_background": "#2f4a58",
+      "css_file": "01-header.css"
+    },
+    {
+      "file": "02-introduction.html",
+      "suffix": "intro",
+      "row_background": "#fcfaf6",
+      "css_file": null
+    },
+    {
+      "file": "03-topic-cards.html",
+      "suffix": "topics",
+      "row_background": "#ffffff",
+      "css_file": null
+    },
+    {
+      "file": "04-questions.html",
+      "suffix": "questions",
+      "row_background": "#2f4a58",
+      "css_file": null
+    },
+    {
+      "file": "05-about.html",
+      "suffix": "about",
+      "row_background": "#fcfaf6",
+      "css_file": null
+    },
+    {
+      "file": "06-footer.html",
+      "suffix": "footer",
+      "row_background": "#2f4a58",
+      "css_file": "06-footer.css"
+    }
+  ]
+}

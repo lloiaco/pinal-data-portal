@@ -1,0 +1,1389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArcGIS homepage sections — local assembly preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&amp;family=Roboto+Condensed:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script type="module" src="https://hubcdn.arcgis.com/opendata-ui/assets/calcite-components/5.1.1/cdn/index.js"></script>
+<style>body {margin:0;}
+.data-portal.hub-portal--header {
+  --pinal-blue: #2f4a58;
+    --pinal-teal: #549898;
+    --pinal-gold: #d29040;
+    --pinal-tan: #d6cbaf;
+  
+    
+    
+    --pinal-teal-dark: #427777;
+    --pinal-teal-light: #b8dada;
+    --pinal-slate: #526772;
+    --pinal-sand: #f1ede3;
+    --pinal-cream: #fcfaf6;
+    --neutral-white: #ffffff;
+  
+    
+    --color-text: var(--pinal-blue);
+    --color-text-muted: var(--pinal-slate);
+    --color-link: var(--pinal-teal-dark);
+    --color-eyebrow: var(--pinal-teal-dark);
+    --color-page: var(--neutral-white);
+    --color-surface-soft: var(--pinal-cream);
+    --color-surface-warm: var(--pinal-sand);
+    --color-header: var(--pinal-blue);
+    --color-on-header: var(--neutral-white);
+    --color-on-dark-accent: var(--pinal-teal-light);
+    --color-accent: var(--pinal-gold);
+    --color-border: var(--pinal-tan);
+    --color-card-accent: var(--pinal-teal);
+    --color-focus: var(--pinal-blue);
+    --color-focus-on-header: var(--neutral-white);
+  
+    
+    --color-hero-panel: var(--neutral-white);
+    
+    --color-hero-border: rgba(255, 255, 255, 0.7);
+    --color-header-divider: rgba(252, 250, 246, 0.25);
+    --shadow-hero: 0 12px 32px rgba(47, 74, 88, 0.1);
+    --shadow-card: 0 5px 14px rgba(47, 74, 88, 0.08);
+    --shadow-card-active: 0 8px 20px rgba(47, 74, 88, 0.14);
+  
+    --font-body: "Roboto", Arial, sans-serif;
+    --font-heading: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+    --image-hero-background: url("https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/Group%2026%20%282%29.png");
+}
+
+.data-portal.hub-portal--header,
+.data-portal.hub-portal--header *,
+.data-portal.hub-portal--header *::before,
+.data-portal.hub-portal--header *::after {
+  box-sizing: border-box;
+}
+
+.data-portal.hub-portal--header {
+  margin: 0;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.data-portal.hub-portal--header a {
+  color: var(--color-link);
+    text-underline-offset: 0.25em;
+}
+
+.data-portal.hub-portal--header a:focus-visible,
+.data-portal.hub-portal--header summary:focus-visible,
+.data-portal.hub-portal--header [tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--color-focus);
+    outline-offset: 5px;
+}
+
+.data-portal.hub-portal--header .portal-container {
+  width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.data-portal.hub-portal--header .site-header {
+  background: var(--color-header);
+    border-bottom: 3px solid var(--color-accent);
+}
+
+.data-portal.hub-portal--header .site-header__inner {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    min-height: 4.75rem;
+    padding-block: 0.625rem;
+}
+
+.data-portal.hub-portal--header .site-brand {
+  display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    min-width: 0;
+    color: var(--color-on-header);
+    text-decoration: none;
+}
+
+.data-portal.hub-portal--header .site-brand__logo {
+  display: block;
+    flex: 0 0 auto;
+    width: 3.125rem;
+    height: 3.125rem;
+    object-fit: contain;
+}
+
+.data-portal.hub-portal--header .site-brand__text {
+  display: grid;
+    gap: 0.1875rem;
+    min-width: 0;
+    font-size: 0.875rem;
+    line-height: 1.3;
+}
+
+.data-portal.hub-portal--header .site-brand__county {
+  font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.data-portal.hub-portal--header .site-brand__name {
+  overflow-wrap: anywhere;
+}
+
+.data-portal.hub-portal--header .site-nav {
+  flex-shrink: 0;
+}
+
+.data-portal.hub-portal--header .topic-menu {
+  position: relative;
+}
+
+.data-portal.hub-portal--header .topic-menu__toggle {
+  display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding-block: 0.5rem;
+    border-bottom: 2px solid transparent;
+    color: var(--color-on-header);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.data-portal.hub-portal--header .topic-menu__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.data-portal.hub-portal--header .topic-menu[open] .topic-menu__arrow {
+  transform: rotate(180deg);
+}
+
+.data-portal.hub-portal--header .topic-menu__toggle:hover,
+.data-portal.hub-portal--header .topic-menu__toggle:focus-visible,
+.data-portal.hub-portal--header .topic-menu[open] > .topic-menu__toggle {
+  border-bottom-color: var(--color-accent);
+}
+
+.data-portal.hub-portal--header .site-brand:focus-visible,
+.data-portal.hub-portal--header .topic-menu__toggle:focus-visible {
+  outline-color: var(--color-focus-on-header);
+}
+
+.data-portal.hub-portal--header .topic-menu__list {
+  position: absolute;
+    z-index: 5;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: 22rem;
+    max-width: calc(100vw - 2rem);
+    max-height: 70vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: var(--color-page);
+    color: var(--color-text);
+    box-shadow: var(--shadow-card-active);
+    list-style: none;
+}
+
+.data-portal.hub-portal--header .topic-menu__list a,
+.data-portal.hub-portal--header .topic-menu__unavailable {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.25rem;
+    color: var(--color-text);
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.data-portal.hub-portal--header .topic-menu__list a:hover,
+.data-portal.hub-portal--header .topic-menu__list a:focus-visible {
+  background: var(--color-surface-soft);
+}
+
+.data-portal.hub-portal--header .topic-menu__list a:focus-visible {
+  outline-offset: -3px;
+}
+
+.data-portal.hub-portal--header .topic-menu__status {
+  margin-top: 0.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+}
+
+@media (max-width: 50rem) {
+.data-portal.hub-portal--header .site-header__inner {
+  flex-wrap: wrap;
+      padding-block: 0.75rem;
+}
+
+.data-portal.hub-portal--header .site-nav {
+  width: 100%;
+}
+
+.data-portal.hub-portal--header .topic-menu__list {
+  position: static;
+      width: 100%;
+      max-width: none;
+      margin-top: 0.5rem;
+}
+
+.data-portal.hub-portal--header .site-brand__logo {
+  width: 2.75rem;
+      height: 2.75rem;
+}
+}
+
+.data-portal[class*="hub-portal--"] h1,
+.data-portal[class*="hub-portal--"] h2,
+.data-portal[class*="hub-portal--"] h3 {
+  color: inherit;
+}
+
+.data-portal.hub-portal--header .site-nav {
+  background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.data-portal[class*="hub-portal--"] .site-brand {
+  color: var(--color-on-header) !important;
+    text-decoration: none !important;
+}
+
+.data-portal[class*="hub-portal--"] .topic-menu__list a {
+  color: var(--color-text) !important;
+}
+.data-portal.hub-portal--footer {
+  --pinal-blue: #2f4a58;
+    --pinal-teal: #549898;
+    --pinal-gold: #d29040;
+    --pinal-tan: #d6cbaf;
+  
+    
+    
+    --pinal-teal-dark: #427777;
+    --pinal-teal-light: #b8dada;
+    --pinal-slate: #526772;
+    --pinal-sand: #f1ede3;
+    --pinal-cream: #fcfaf6;
+    --neutral-white: #ffffff;
+  
+    
+    --color-text: var(--pinal-blue);
+    --color-text-muted: var(--pinal-slate);
+    --color-link: var(--pinal-teal-dark);
+    --color-eyebrow: var(--pinal-teal-dark);
+    --color-page: var(--neutral-white);
+    --color-surface-soft: var(--pinal-cream);
+    --color-surface-warm: var(--pinal-sand);
+    --color-header: var(--pinal-blue);
+    --color-on-header: var(--neutral-white);
+    --color-on-dark-accent: var(--pinal-teal-light);
+    --color-accent: var(--pinal-gold);
+    --color-border: var(--pinal-tan);
+    --color-card-accent: var(--pinal-teal);
+    --color-focus: var(--pinal-blue);
+    --color-focus-on-header: var(--neutral-white);
+  
+    
+    --color-hero-panel: var(--neutral-white);
+    
+    --color-hero-border: rgba(255, 255, 255, 0.7);
+    --color-header-divider: rgba(252, 250, 246, 0.25);
+    --shadow-hero: 0 12px 32px rgba(47, 74, 88, 0.1);
+    --shadow-card: 0 5px 14px rgba(47, 74, 88, 0.08);
+    --shadow-card-active: 0 8px 20px rgba(47, 74, 88, 0.14);
+  
+    --font-body: "Roboto", Arial, sans-serif;
+    --font-heading: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+    --image-hero-background: url("https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/Group%2026%20%282%29.png");
+}
+
+.data-portal.hub-portal--footer,
+.data-portal.hub-portal--footer *,
+.data-portal.hub-portal--footer *::before,
+.data-portal.hub-portal--footer *::after {
+  box-sizing: border-box;
+}
+
+.data-portal.hub-portal--footer {
+  margin: 0;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.data-portal.hub-portal--footer a {
+  color: var(--color-link);
+    text-underline-offset: 0.25em;
+}
+
+.data-portal.hub-portal--footer a:focus-visible,
+.data-portal.hub-portal--footer summary:focus-visible,
+.data-portal.hub-portal--footer [tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--color-focus);
+    outline-offset: 5px;
+}
+
+.data-portal.hub-portal--footer .portal-container {
+  width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.data-portal.hub-portal--footer .site-footer {
+  border-top: 4px solid var(--color-accent);
+    background: var(--color-header);
+    color: var(--color-on-header);
+}
+
+.data-portal.hub-portal--footer .site-footer__inner {
+  display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem 2rem;
+    padding-block: 1.5rem;
+}
+
+.data-portal.hub-portal--footer .site-footer__identity p {
+  margin: 0;
+}
+
+.data-portal.hub-portal--footer .site-footer__copyright {
+  font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.data-portal.hub-portal--footer .site-footer__department {
+  color: var(--color-on-dark-accent);
+    font-size: 0.8125rem;
+}
+
+.data-portal.hub-portal--footer .site-footer__links {
+  display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+}
+
+.data-portal.hub-portal--footer .site-footer__links a {
+  display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-height: 2.75rem;
+    color: var(--color-on-dark-accent);
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+
+.data-portal.hub-portal--footer .site-footer a:focus-visible {
+  outline-color: var(--color-focus-on-header);
+}
+
+.data-portal[class*="hub-portal--"] h1,
+.data-portal[class*="hub-portal--"] h2,
+.data-portal[class*="hub-portal--"] h3 {
+  color: inherit;
+}
+
+.data-portal[class*="hub-portal--"] .site-footer__links a {
+  color: var(--color-on-dark-accent) !important;
+}</style>
+</head>
+<body>
+<!-- Preview only: this models row backgrounds, not Hub's editor or sanitizer. -->
+<div class="data-portal hub-portal--header">
+<header class="site-header">
+      <div class="portal-container site-header__inner">
+        <a class="site-brand" href="https://economic-workforce-data-portal-pinal.hub.arcgis.com/" aria-label="Pinal County Economic and Workforce Data Portal home">
+          <img class="site-brand__logo" src="https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/SVG%20Hub%20-%20Gold%201.png" alt="" width="50" height="50">
+          <span class="site-brand__text">
+            <span class="site-brand__county">Pinal County</span>
+            <span class="site-brand__name">Economic &amp; Workforce Data Portal</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <details class="topic-menu">
+            <summary class="topic-menu__toggle">Explore topics <span class="topic-menu__arrow" aria-hidden="true">▾</span></summary>
+            <ul class="topic-menu__list">
+              <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">Economic Indicators</a></li>
+              <li><a href="https://workforce-performance-pinal.hub.arcgis.com/">ARIZONA@WORK Pinal County Performance</a></li>
+              <li class="topic-menu__unavailable">
+                <span>Targeted Industries</span>
+                <span class="topic-menu__status">In development</span>
+              </li>
+              <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">H3 Occupation Analysis</a></li>
+            </ul>
+          </details>
+        </nav>
+      </div>
+    </header>
+</div>
+<main><div style="background-color:#fcfaf6;background-image:url('https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/Group%2026%20%282%29.png');background-position:center;background-size:cover;"><!-- Generated from index.html and css/ by tools/export_arcgis.py. Regenerate after source edits. Paste this whole file into ONE Text card's HTML editor. -->
+<style>
+.data-portal.hub-portal--intro {
+  --pinal-blue: #2f4a58;
+    --pinal-teal: #549898;
+    --pinal-gold: #d29040;
+    --pinal-tan: #d6cbaf;
+  
+    
+    
+    --pinal-teal-dark: #427777;
+    --pinal-teal-light: #b8dada;
+    --pinal-slate: #526772;
+    --pinal-sand: #f1ede3;
+    --pinal-cream: #fcfaf6;
+    --neutral-white: #ffffff;
+  
+    
+    --color-text: var(--pinal-blue);
+    --color-text-muted: var(--pinal-slate);
+    --color-link: var(--pinal-teal-dark);
+    --color-eyebrow: var(--pinal-teal-dark);
+    --color-page: var(--neutral-white);
+    --color-surface-soft: var(--pinal-cream);
+    --color-surface-warm: var(--pinal-sand);
+    --color-header: var(--pinal-blue);
+    --color-on-header: var(--neutral-white);
+    --color-on-dark-accent: var(--pinal-teal-light);
+    --color-accent: var(--pinal-gold);
+    --color-border: var(--pinal-tan);
+    --color-card-accent: var(--pinal-teal);
+    --color-focus: var(--pinal-blue);
+    --color-focus-on-header: var(--neutral-white);
+  
+    
+    --color-hero-panel: var(--neutral-white);
+    
+    --color-hero-border: rgba(255, 255, 255, 0.7);
+    --color-header-divider: rgba(252, 250, 246, 0.25);
+    --shadow-hero: 0 12px 32px rgba(47, 74, 88, 0.1);
+    --shadow-card: 0 5px 14px rgba(47, 74, 88, 0.08);
+    --shadow-card-active: 0 8px 20px rgba(47, 74, 88, 0.14);
+  
+    --font-body: "Roboto", Arial, sans-serif;
+    --font-heading: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+    --image-hero-background: url("https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/Group%2026%20%282%29.png");
+}
+
+.data-portal.hub-portal--intro,
+.data-portal.hub-portal--intro *,
+.data-portal.hub-portal--intro *::before,
+.data-portal.hub-portal--intro *::after {
+  box-sizing: border-box;
+}
+
+.data-portal.hub-portal--intro {
+  margin: 0;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.data-portal.hub-portal--intro a {
+  color: var(--color-link);
+    text-underline-offset: 0.25em;
+}
+
+.data-portal.hub-portal--intro a:focus-visible,
+.data-portal.hub-portal--intro summary:focus-visible,
+.data-portal.hub-portal--intro [tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--color-focus);
+    outline-offset: 5px;
+}
+
+.data-portal.hub-portal--intro .portal-container {
+  width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.data-portal.hub-portal--intro .hero {
+  background-color: var(--color-surface-soft);
+    background-image: var(--image-hero-background);
+    background-position: center;
+    background-size: cover;
+}
+
+.data-portal.hub-portal--intro .hero__inner {
+  padding-block: clamp(2rem, 5vw, 3.375rem);
+}
+
+.data-portal.hub-portal--intro .hero__panel {
+  max-width: 42rem;
+    padding: clamp(1.5rem, 3vw, 2.125rem);
+    border: 1px solid var(--color-hero-border);
+    border-radius: 0.75rem;
+    background: var(--color-hero-panel);
+    box-shadow: var(--shadow-hero);
+}
+
+.data-portal.hub-portal--intro .eyebrow {
+  margin: 0 0 1.125rem;
+    color: var(--color-eyebrow);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.data-portal.hub-portal--intro .hero h1 {
+  margin: 0 0 1.125rem;
+    color: var(--color-text);
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.08;
+    overflow-wrap: break-word;
+}
+
+.data-portal.hub-portal--intro .hero__description {
+  margin: 0;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.55;
+}
+
+.data-portal.hub-portal--intro,
+.data-portal.hub-portal--intro .hero {
+  background-color: transparent;
+}
+
+.data-portal.hub-portal--intro .hero {
+  background-image: none;
+}
+
+.data-portal[class*="hub-portal--"] h1,
+.data-portal[class*="hub-portal--"] h2,
+.data-portal[class*="hub-portal--"] h3 {
+  color: inherit;
+}
+</style>
+<div class="data-portal hub-portal--intro">
+<section class="hero" id="explore-data" aria-labelledby="portal-heading">
+        <div class="portal-container hero__inner">
+          <div class="hero__panel">
+            <p class="eyebrow">Public data &bull; Regional insight</p>
+            <h1 id="portal-heading">Explore Pinal County through data.</h1>
+            <p class="hero__description">Explore economic conditions, workforce outcomes, priority industries, and regional labor-market tools—all in one place.</p>
+          </div>
+        </div>
+      </section>
+</div></div>
+<div style="background-color:#ffffff;"><!-- Generated from index.html and css/ by tools/export_arcgis.py. Regenerate after source edits. Paste this whole file into ONE Text card's HTML editor. -->
+<style>
+.data-portal.hub-portal--topics {
+  --pinal-blue: #2f4a58;
+    --pinal-teal: #549898;
+    --pinal-gold: #d29040;
+    --pinal-tan: #d6cbaf;
+  
+    
+    
+    --pinal-teal-dark: #427777;
+    --pinal-teal-light: #b8dada;
+    --pinal-slate: #526772;
+    --pinal-sand: #f1ede3;
+    --pinal-cream: #fcfaf6;
+    --neutral-white: #ffffff;
+  
+    
+    --color-text: var(--pinal-blue);
+    --color-text-muted: var(--pinal-slate);
+    --color-link: var(--pinal-teal-dark);
+    --color-eyebrow: var(--pinal-teal-dark);
+    --color-page: var(--neutral-white);
+    --color-surface-soft: var(--pinal-cream);
+    --color-surface-warm: var(--pinal-sand);
+    --color-header: var(--pinal-blue);
+    --color-on-header: var(--neutral-white);
+    --color-on-dark-accent: var(--pinal-teal-light);
+    --color-accent: var(--pinal-gold);
+    --color-border: var(--pinal-tan);
+    --color-card-accent: var(--pinal-teal);
+    --color-focus: var(--pinal-blue);
+    --color-focus-on-header: var(--neutral-white);
+  
+    
+    --color-hero-panel: var(--neutral-white);
+    
+    --color-hero-border: rgba(255, 255, 255, 0.7);
+    --color-header-divider: rgba(252, 250, 246, 0.25);
+    --shadow-hero: 0 12px 32px rgba(47, 74, 88, 0.1);
+    --shadow-card: 0 5px 14px rgba(47, 74, 88, 0.08);
+    --shadow-card-active: 0 8px 20px rgba(47, 74, 88, 0.14);
+  
+    --font-body: "Roboto", Arial, sans-serif;
+    --font-heading: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+    --image-hero-background: url("https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/Group%2026%20%282%29.png");
+}
+
+.data-portal.hub-portal--topics,
+.data-portal.hub-portal--topics *,
+.data-portal.hub-portal--topics *::before,
+.data-portal.hub-portal--topics *::after {
+  box-sizing: border-box;
+}
+
+.data-portal.hub-portal--topics {
+  margin: 0;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.data-portal.hub-portal--topics a {
+  color: var(--color-link);
+    text-underline-offset: 0.25em;
+}
+
+.data-portal.hub-portal--topics a:focus-visible,
+.data-portal.hub-portal--topics summary:focus-visible,
+.data-portal.hub-portal--topics [tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--color-focus);
+    outline-offset: 5px;
+}
+
+.data-portal.hub-portal--topics .portal-container {
+  width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.data-portal.hub-portal--topics .eyebrow {
+  margin: 0 0 1.125rem;
+    color: var(--color-eyebrow);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.data-portal.hub-portal--topics .topics {
+  padding-block: clamp(2.5rem, 5vw, 3.375rem);
+}
+
+.data-portal.hub-portal--topics .section-heading {
+  display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: end;
+    gap: 1rem 2.5rem;
+    margin-bottom: 1.875rem;
+}
+
+.data-portal.hub-portal--topics .section-heading .eyebrow {
+  margin-bottom: 0.75rem;
+    font-size: 0.6875rem;
+}
+
+.data-portal.hub-portal--topics .section-heading h2 {
+  margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.9375rem, 4vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.data-portal.hub-portal--topics .section-heading__description {
+  margin: 0;
+    max-width: 32rem;
+}
+
+.data-portal.hub-portal--topics .topics .section-heading__description {
+  color: var(--color-text-muted);
+    font-size: 0.875rem;
+    line-height: 1.55;
+}
+
+.data-portal.hub-portal--topics .topic-grid {
+  display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.125rem;
+}
+
+.data-portal.hub-portal--topics .topic-card {
+  display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-card-accent);
+    border-radius: 0.5rem;
+    background: var(--color-page);
+    box-shadow: var(--shadow-card);
+}
+
+.data-portal.hub-portal--topics .topic-card:has(a):hover,
+.data-portal.hub-portal--topics .topic-card:focus-within {
+  border-color: var(--color-card-accent);
+    box-shadow: var(--shadow-card-active);
+}
+
+.data-portal.hub-portal--topics .topic-card__top {
+  display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.875rem;
+    min-height: 2.875rem;
+    margin-bottom: 1rem;
+}
+
+.data-portal.hub-portal--topics .topic-card__icon {
+  flex: 0 0 auto;
+    color: var(--color-text);
+}
+
+.data-portal.hub-portal--topics .topic-card__label {
+  max-width: 9rem;
+    color: var(--color-eyebrow);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: right;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.data-portal.hub-portal--topics .topic-card h3 {
+  margin: 0 0 0.625rem;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.data-portal.hub-portal--topics .topic-card__description {
+  margin: 0 0 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    line-height: 1.55;
+}
+
+.data-portal.hub-portal--topics .topic-card__link {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    min-height: 2.75rem;
+    margin-top: auto;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.data-portal.hub-portal--topics .topic-card__link span:first-child {
+  text-decoration: underline;
+    text-underline-offset: 0.25em;
+}
+
+.data-portal.hub-portal--topics .topic-card__link:hover {
+  color: var(--color-text);
+}
+
+.data-portal.hub-portal--topics .topic-card__status {
+  align-self: flex-start;
+    margin: auto 0 0;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    background: var(--color-surface-soft);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+@media (max-width: 62.5rem) {
+.data-portal.hub-portal--topics .topic-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 43.75rem) {
+.data-portal.hub-portal--topics .section-heading,
+.data-portal.hub-portal--topics .topic-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+}
+
+.data-portal[class*="hub-portal--"] h1,
+.data-portal[class*="hub-portal--"] h2,
+.data-portal[class*="hub-portal--"] h3 {
+  color: inherit;
+}
+
+.data-portal[class*="hub-portal--"] .topic-card__link {
+  text-decoration: none !important;
+}
+
+.data-portal[class*="hub-portal--"] .topic-card__link span:first-child {
+  text-decoration: underline !important;
+}
+</style>
+<div class="data-portal hub-portal--topics">
+<section class="topics" id="topics" aria-labelledby="topics-heading">
+        <div class="portal-container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Explore by topic</p>
+              <h2 id="topics-heading">Find the data product you need</h2>
+            </div>
+            <p class="section-heading__description">Each topic brings related dashboards, indicators, and tools together under one clear entry point.</p>
+          </div>
+
+          <!-- The same card structure works for each topic. SVG icons need no library. -->
+          <div class="topic-grid">
+            <article class="topic-card" aria-labelledby="economic-heading">
+              <div class="topic-card__top">
+                <span class="topic-card__icon" aria-hidden="true"><calcite-icon icon="graph-time-series" scale="l"></calcite-icon></span>
+                <span class="topic-card__label">Regional conditions</span>
+              </div>
+              <h3 id="economic-heading">Economic Indicators</h3>
+              <p class="topic-card__description">Explore population, jobs, unemployment, GDP, earnings, and commuting patterns across Pinal County.</p>
+              <a class="topic-card__link" href="https://key-performance-indicators-pinal.hub.arcgis.com/">
+                <span>Explore economic indicators</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <article class="topic-card" aria-labelledby="workforce-heading">
+              <div class="topic-card__top">
+                <span class="topic-card__icon" aria-hidden="true"><calcite-icon icon="group" scale="l"></calcite-icon></span>
+                <span class="topic-card__label">ARIZONA@WORK outcomes</span>
+              </div>
+              <h3 id="workforce-heading">ARIZONA@WORK Pinal County Performance</h3>
+              <p class="topic-card__description">Review public workforce-program activity, outcomes, and performance measures.</p>
+              <a class="topic-card__link" href="https://workforce-performance-pinal.hub.arcgis.com/">
+                <span>View workforce performance</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+
+            <article class="topic-card" aria-labelledby="industries-heading">
+              <div class="topic-card__top">
+                <span class="topic-card__icon" aria-hidden="true"><calcite-icon icon="organization" scale="l"></calcite-icon></span>
+                <span class="topic-card__label">Industry intelligence</span>
+              </div>
+              <h3 id="industries-heading">Targeted Industries</h3>
+              <p class="topic-card__description">Planned profiles will explore Pinal County’s priority industries, workforce needs, and competitive position.</p>
+              <!-- A status replaces the link until supporting content exists. -->
+              <p class="topic-card__status">In development</p>
+            </article>
+
+            <article class="topic-card" aria-labelledby="h3-heading">
+              <div class="topic-card__top">
+                <span class="topic-card__icon" aria-hidden="true"><calcite-icon icon="investigation" scale="l"></calcite-icon></span>
+                <span class="topic-card__label">Occupation analysis</span>
+              </div>
+              <h3 id="h3-heading">H3 Occupation Analysis</h3>
+              <p class="topic-card__description">Identify occupations that are high demand, high skill, and high wage using projected job openings, education and training requirements, and earnings.</p>
+              <a class="topic-card__link" href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">
+                <span>Explore H3 occupation analysis</span>
+                <span aria-hidden="true">&rarr;</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+</div></div>
+<div style="background-color:#2f4a58;"><!-- Generated from index.html and css/ by tools/export_arcgis.py. Regenerate after source edits. Paste this whole file into ONE Text card's HTML editor. -->
+<style>
+.data-portal.hub-portal--questions {
+  --pinal-blue: #2f4a58;
+    --pinal-teal: #549898;
+    --pinal-gold: #d29040;
+    --pinal-tan: #d6cbaf;
+  
+    
+    
+    --pinal-teal-dark: #427777;
+    --pinal-teal-light: #b8dada;
+    --pinal-slate: #526772;
+    --pinal-sand: #f1ede3;
+    --pinal-cream: #fcfaf6;
+    --neutral-white: #ffffff;
+  
+    
+    --color-text: var(--pinal-blue);
+    --color-text-muted: var(--pinal-slate);
+    --color-link: var(--pinal-teal-dark);
+    --color-eyebrow: var(--pinal-teal-dark);
+    --color-page: var(--neutral-white);
+    --color-surface-soft: var(--pinal-cream);
+    --color-surface-warm: var(--pinal-sand);
+    --color-header: var(--pinal-blue);
+    --color-on-header: var(--neutral-white);
+    --color-on-dark-accent: var(--pinal-teal-light);
+    --color-accent: var(--pinal-gold);
+    --color-border: var(--pinal-tan);
+    --color-card-accent: var(--pinal-teal);
+    --color-focus: var(--pinal-blue);
+    --color-focus-on-header: var(--neutral-white);
+  
+    
+    --color-hero-panel: var(--neutral-white);
+    
+    --color-hero-border: rgba(255, 255, 255, 0.7);
+    --color-header-divider: rgba(252, 250, 246, 0.25);
+    --shadow-hero: 0 12px 32px rgba(47, 74, 88, 0.1);
+    --shadow-card: 0 5px 14px rgba(47, 74, 88, 0.08);
+    --shadow-card-active: 0 8px 20px rgba(47, 74, 88, 0.14);
+  
+    --font-body: "Roboto", Arial, sans-serif;
+    --font-heading: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+    --image-hero-background: url("https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/Group%2026%20%282%29.png");
+}
+
+.data-portal.hub-portal--questions,
+.data-portal.hub-portal--questions *,
+.data-portal.hub-portal--questions *::before,
+.data-portal.hub-portal--questions *::after {
+  box-sizing: border-box;
+}
+
+.data-portal.hub-portal--questions {
+  margin: 0;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.data-portal.hub-portal--questions a {
+  color: var(--color-link);
+    text-underline-offset: 0.25em;
+}
+
+.data-portal.hub-portal--questions a:focus-visible,
+.data-portal.hub-portal--questions summary:focus-visible,
+.data-portal.hub-portal--questions [tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--color-focus);
+    outline-offset: 5px;
+}
+
+.data-portal.hub-portal--questions .portal-container {
+  width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.data-portal.hub-portal--questions .eyebrow {
+  margin: 0 0 1.125rem;
+    color: var(--color-eyebrow);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.data-portal.hub-portal--questions .question-directory {
+  background: var(--color-header);
+}
+
+.data-portal.hub-portal--questions .question-directory h2 {
+  flex: 1 1 16rem;
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.data-portal.hub-portal--questions .question-directory__summary {
+  display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    min-height: 6.5rem;
+    padding-block: 1.5rem;
+    color: var(--color-on-header);
+    cursor: pointer;
+    list-style: none;
+}
+
+.data-portal.hub-portal--questions .question-directory__summary::-webkit-details-marker {
+  display: none;
+}
+
+.data-portal.hub-portal--questions .question-directory__summary:focus-visible {
+  outline-color: var(--color-focus-on-header);
+    outline-offset: -5px;
+}
+
+.data-portal.hub-portal--questions .question-directory__summary .eyebrow {
+  display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-on-dark-accent);
+    font-family: var(--font-body);
+    font-size: 0.6875rem;
+}
+
+.data-portal.hub-portal--questions .question-directory__control {
+  display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-left: auto;
+    color: var(--color-on-dark-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.data-portal.hub-portal--questions .question-directory__icon {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.data-portal.hub-portal--questions .question-directory__icon::before {
+  content: "+";
+}
+
+.data-portal.hub-portal--questions .question-directory__disclosure[open] .question-directory__icon::before {
+  content: "\2212";
+}
+
+.data-portal.hub-portal--questions .question-directory__grid {
+  display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem 2rem;
+    padding: 1.25rem;
+    background: var(--color-page);
+}
+
+.data-portal.hub-portal--questions .question-group {
+  min-width: 0;
+}
+
+.data-portal.hub-portal--questions .question-group h3 {
+  margin: 0 0 0.375rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.data-portal.hub-portal--questions .question-group__links {
+  margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.data-portal.hub-portal--questions .question-group__links li + li {
+  margin-top: 0.125rem;
+}
+
+.data-portal.hub-portal--questions .question-group__links a {
+  display: inline-block;
+    padding-block: 0.1875rem;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    text-decoration: underline;
+    overflow-wrap: break-word;
+}
+
+.data-portal.hub-portal--questions .question-group__links a:hover {
+  color: var(--color-text);
+}
+
+.data-portal.hub-portal--questions .question-group__note {
+  margin: 0;
+    font-size: 0.875rem;
+}
+
+.data-portal.hub-portal--questions .question-group__planned {
+  margin-top: 0.375rem;
+    font-size: 0.875rem;
+    line-height: 1.45;
+}
+
+.data-portal.hub-portal--questions .question-group__planned li {
+  padding-block: 0.1875rem;
+}
+
+@media (max-width: 43.75rem) {
+.data-portal.hub-portal--questions .question-directory__grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+}
+
+.data-portal[class*="hub-portal--"] h1,
+.data-portal[class*="hub-portal--"] h2,
+.data-portal[class*="hub-portal--"] h3 {
+  color: inherit;
+}
+</style>
+<div class="data-portal hub-portal--questions">
+<section class="question-directory" id="find-answers" aria-labelledby="answers-heading">
+        <div class="portal-container">
+          <details class="question-directory__disclosure">
+            <summary class="question-directory__summary">
+              <h2 id="answers-heading">
+                <span class="eyebrow">Not sure where to begin?</span>
+                <span>Start with the question</span>
+              </h2>
+              <span class="question-directory__control">
+                <span>Browse Questions</span>
+                <span class="question-directory__icon" aria-hidden="true"></span>
+              </span>
+            </summary>
+
+            <!-- One dropdown contains the direct question links; closed by default. -->
+            <div class="question-directory__grid">
+              <section class="question-group" aria-labelledby="economic-questions-heading">
+                <h3 id="economic-questions-heading">Economic Indicators</h3>
+                <ul class="question-group__links">
+                  <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">How is Pinal County’s economy changing?</a></li>
+                  <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">What are the latest employment and unemployment trends?</a></li>
+                  <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">How many people live in Pinal County and its cities and towns?</a></li>
+                  <li><a href="https://key-performance-indicators-pinal.hub.arcgis.com/">How are the populations of Pinal County and its cities and towns projected to grow?</a></li>
+                </ul>
+              </section>
+
+              <section class="question-group" aria-labelledby="workforce-questions-heading">
+                <h3 id="workforce-questions-heading">ARIZONA@WORK Pinal County Performance</h3>
+                <ul class="question-group__links">
+                  <li><a href="https://federal-performance-measures-pinal.hub.arcgis.com/">How are workforce programs performing on federal measures?</a></li>
+                  <li><a href="https://workforce-outcomes-pinal.hub.arcgis.com/">How many people are participating in workforce programs?</a></li>
+                  <li><a href="https://workforce-outcomes-pinal.hub.arcgis.com/">What training are participants receiving?</a></li>
+                  <li><a href="https://workforce-outcomes-pinal.hub.arcgis.com/">What employment and earnings outcomes are participants achieving?</a></li>
+                </ul>
+              </section>
+
+              <section class="question-group" aria-labelledby="industry-questions-heading">
+                <h3 id="industry-questions-heading">Targeted Industries</h3>
+                <p class="question-group__note">In development</p>
+                <ul class="question-group__links question-group__planned">
+                  <li>What are Pinal County’s targeted industries?</li>
+                  <li>Which occupations support these industries?</li>
+                  <li>What skills and training do these industries need?</li>
+                </ul>
+              </section>
+
+              <section class="question-group" aria-labelledby="occupation-questions-heading">
+                <h3 id="occupation-questions-heading">H3 Occupation Analysis</h3>
+                <ul class="question-group__links">
+                  <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">Which occupations are projected to have the most job openings?</a></li>
+                  <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">Which occupations offer higher wages?</a></li>
+                  <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">What education and training do different occupations require?</a></li>
+                  <li><a href="https://h3-occupation-analysis-pinal.hub.arcgis.com/">Which occupations meet Pinal County’s high-demand, high-skill, and high-wage criteria?</a></li>
+                </ul>
+              </section>
+            </div>
+          </details>
+        </div>
+      </section>
+</div></div>
+<div style="background-color:#fcfaf6;"><!-- Generated from index.html and css/ by tools/export_arcgis.py. Regenerate after source edits. Paste this whole file into ONE Text card's HTML editor. -->
+<style>
+.data-portal.hub-portal--about {
+  --pinal-blue: #2f4a58;
+    --pinal-teal: #549898;
+    --pinal-gold: #d29040;
+    --pinal-tan: #d6cbaf;
+  
+    
+    
+    --pinal-teal-dark: #427777;
+    --pinal-teal-light: #b8dada;
+    --pinal-slate: #526772;
+    --pinal-sand: #f1ede3;
+    --pinal-cream: #fcfaf6;
+    --neutral-white: #ffffff;
+  
+    
+    --color-text: var(--pinal-blue);
+    --color-text-muted: var(--pinal-slate);
+    --color-link: var(--pinal-teal-dark);
+    --color-eyebrow: var(--pinal-teal-dark);
+    --color-page: var(--neutral-white);
+    --color-surface-soft: var(--pinal-cream);
+    --color-surface-warm: var(--pinal-sand);
+    --color-header: var(--pinal-blue);
+    --color-on-header: var(--neutral-white);
+    --color-on-dark-accent: var(--pinal-teal-light);
+    --color-accent: var(--pinal-gold);
+    --color-border: var(--pinal-tan);
+    --color-card-accent: var(--pinal-teal);
+    --color-focus: var(--pinal-blue);
+    --color-focus-on-header: var(--neutral-white);
+  
+    
+    --color-hero-panel: var(--neutral-white);
+    
+    --color-hero-border: rgba(255, 255, 255, 0.7);
+    --color-header-divider: rgba(252, 250, 246, 0.25);
+    --shadow-hero: 0 12px 32px rgba(47, 74, 88, 0.1);
+    --shadow-card: 0 5px 14px rgba(47, 74, 88, 0.08);
+    --shadow-card-active: 0 8px 20px rgba(47, 74, 88, 0.14);
+  
+    --font-body: "Roboto", Arial, sans-serif;
+    --font-heading: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+    --image-hero-background: url("https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/Group%2026%20%282%29.png");
+}
+
+.data-portal.hub-portal--about,
+.data-portal.hub-portal--about *,
+.data-portal.hub-portal--about *::before,
+.data-portal.hub-portal--about *::after {
+  box-sizing: border-box;
+}
+
+.data-portal.hub-portal--about {
+  margin: 0;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.data-portal.hub-portal--about a {
+  color: var(--color-link);
+    text-underline-offset: 0.25em;
+}
+
+.data-portal.hub-portal--about a:focus-visible,
+.data-portal.hub-portal--about summary:focus-visible,
+.data-portal.hub-portal--about [tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--color-focus);
+    outline-offset: 5px;
+}
+
+.data-portal.hub-portal--about .portal-container {
+  width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.data-portal.hub-portal--about .eyebrow {
+  margin: 0 0 1.125rem;
+    color: var(--color-eyebrow);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.data-portal.hub-portal--about .section-heading {
+  display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: end;
+    gap: 1rem 2.5rem;
+    margin-bottom: 1.875rem;
+}
+
+.data-portal.hub-portal--about .section-heading .eyebrow {
+  margin-bottom: 0.75rem;
+    font-size: 0.6875rem;
+}
+
+.data-portal.hub-portal--about .section-heading h2 {
+  margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.9375rem, 4vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.data-portal.hub-portal--about .section-heading__description {
+  margin: 0;
+    max-width: 32rem;
+}
+
+.data-portal.hub-portal--about .about {
+  padding-block: clamp(2.5rem, 5vw, 3.375rem);
+    background: var(--color-surface-soft);
+}
+
+.data-portal.hub-portal--about .about .section-heading {
+  align-items: start;
+    margin-bottom: 0;
+}
+
+.data-portal.hub-portal--about .about .section-heading__description {
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 43.75rem) {
+.data-portal.hub-portal--about .section-heading {
+  grid-template-columns: minmax(0, 1fr);
+}
+}
+
+.data-portal[class*="hub-portal--"] h1,
+.data-portal[class*="hub-portal--"] h2,
+.data-portal[class*="hub-portal--"] h3 {
+  color: inherit;
+}
+</style>
+<div class="data-portal hub-portal--about">
+<section class="about" id="about" aria-labelledby="about-heading">
+        <div class="portal-container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">About the portal</p>
+              <h2 id="about-heading">Public data for better regional decisions.</h2>
+            </div>
+            <p class="section-heading__description">This portal is maintained by the Pinal County Economic and Workforce Development Department. It provides a single, consistent entry point to the department’s public dashboards, indicators, analytical tools, and research products.</p>
+          </div>
+        </div>
+      </section>
+</div></div></main>
+<div class="data-portal hub-portal--footer">
+<footer class="site-footer">
+      <div class="portal-container site-footer__inner">
+        <div class="site-footer__identity">
+          <p class="site-footer__copyright">&copy; 2026 Pinal County, Arizona</p>
+          <p class="site-footer__department">Economic &amp; Workforce Development Department</p>
+        </div>
+        <nav class="site-footer__links" aria-label="Footer navigation">
+          <a href="https://www.pinal.gov/1849/Economic-Workforce-Development">Department Home</a>
+          <a href="https://www.pinal.gov/153/Accessibility">Accessibility</a>
+          <a href="#">Back to top <span aria-hidden="true">&uarr;</span></a>
+        </nav>
+      </div>
+    </footer>
+</div>
+</body>
+</html>

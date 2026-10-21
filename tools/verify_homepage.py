@@ -299,7 +299,7 @@ def main():
     pairs = [("blue on white", "#2f4a58", "#ffffff"), ("blue on cream", "#2f4a58", "#fcfaf6"),
              ("dark teal on white", "#427777", "#ffffff"), ("dark teal on cream", "#427777", "#fcfaf6"),
              ("slate on white", "#526772", "#ffffff"), ("slate on cream", "#526772", "#fcfaf6"),
-             ("cream on blue", "#fcfaf6", "#2f4a58"), ("pale teal on blue", "#b8dada", "#2f4a58")]
+             ("white on blue", "#ffffff", "#2f4a58"), ("pale teal on blue", "#b8dada", "#2f4a58")]
     for label, foreground, background in pairs:
         ratio = contrast(foreground, background)
         record(f"ordinary text contrast: {label}", ratio >= 4.5, round(ratio, 4))

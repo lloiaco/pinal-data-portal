@@ -1,0 +1,262 @@
+/* Generated from index.html and css/ by tools/export_arcgis.py. Regenerate after source edits. Paste into Hub custom header CSS, without style tags. */
+.data-portal.hub-portal--header {
+  --pinal-blue: #2f4a58;
+    --pinal-teal: #549898;
+    --pinal-gold: #d29040;
+    --pinal-tan: #d6cbaf;
+  
+    
+    
+    --pinal-teal-dark: #427777;
+    --pinal-teal-light: #b8dada;
+    --pinal-slate: #526772;
+    --pinal-sand: #f1ede3;
+    --pinal-cream: #fcfaf6;
+    --neutral-white: #ffffff;
+  
+    
+    --color-text: var(--pinal-blue);
+    --color-text-muted: var(--pinal-slate);
+    --color-link: var(--pinal-teal-dark);
+    --color-eyebrow: var(--pinal-teal-dark);
+    --color-page: var(--neutral-white);
+    --color-surface-soft: var(--pinal-cream);
+    --color-surface-warm: var(--pinal-sand);
+    --color-header: var(--pinal-blue);
+    --color-on-header: var(--neutral-white);
+    --color-on-dark-accent: var(--pinal-teal-light);
+    --color-accent: var(--pinal-gold);
+    --color-border: var(--pinal-tan);
+    --color-card-accent: var(--pinal-teal);
+    --color-focus: var(--pinal-blue);
+    --color-focus-on-header: var(--neutral-white);
+  
+    
+    --color-hero-panel: var(--neutral-white);
+    
+    --color-hero-border: rgba(255, 255, 255, 0.7);
+    --color-header-divider: rgba(252, 250, 246, 0.25);
+    --shadow-hero: 0 12px 32px rgba(47, 74, 88, 0.1);
+    --shadow-card: 0 5px 14px rgba(47, 74, 88, 0.08);
+    --shadow-card-active: 0 8px 20px rgba(47, 74, 88, 0.14);
+  
+    --font-body: "Roboto", Arial, sans-serif;
+    --font-heading: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+    --image-hero-background: url("https://www.arcgis.com/sharing/rest/content/items/cfeb05c86b994a0b829fb8614b93936c/resources/Group%2026%20%282%29.png");
+}
+
+.data-portal.hub-portal--header,
+.data-portal.hub-portal--header *,
+.data-portal.hub-portal--header *::before,
+.data-portal.hub-portal--header *::after {
+  box-sizing: border-box;
+}
+
+.data-portal.hub-portal--header {
+  margin: 0;
+    background: var(--color-page);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.data-portal.hub-portal--header a {
+  color: var(--color-link);
+    text-underline-offset: 0.25em;
+}
+
+.data-portal.hub-portal--header a:focus-visible,
+.data-portal.hub-portal--header summary:focus-visible,
+.data-portal.hub-portal--header [tabindex="-1"]:focus-visible {
+  outline: 3px solid var(--color-focus);
+    outline-offset: 5px;
+}
+
+.data-portal.hub-portal--header .portal-container {
+  width: 100%;
+    max-width: 75rem;
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.data-portal.hub-portal--header .site-header {
+  background: var(--color-header);
+    border-bottom: 3px solid var(--color-accent);
+}
+
+.data-portal.hub-portal--header .site-header__inner {
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    min-height: 4.75rem;
+    padding-block: 0.625rem;
+}
+
+.data-portal.hub-portal--header .site-brand {
+  display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    min-width: 0;
+    color: var(--color-on-header);
+    text-decoration: none;
+}
+
+.data-portal.hub-portal--header .site-brand__logo {
+  display: block;
+    flex: 0 0 auto;
+    width: 3.125rem;
+    height: 3.125rem;
+    object-fit: contain;
+}
+
+.data-portal.hub-portal--header .site-brand__text {
+  display: grid;
+    gap: 0.1875rem;
+    min-width: 0;
+    font-size: 0.875rem;
+    line-height: 1.3;
+}
+
+.data-portal.hub-portal--header .site-brand__county {
+  font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.data-portal.hub-portal--header .site-brand__name {
+  overflow-wrap: anywhere;
+}
+
+.data-portal.hub-portal--header .site-nav {
+  flex-shrink: 0;
+}
+
+.data-portal.hub-portal--header .topic-menu {
+  position: relative;
+}
+
+.data-portal.hub-portal--header .topic-menu__toggle {
+  display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding-block: 0.5rem;
+    border-bottom: 2px solid transparent;
+    color: var(--color-on-header);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.data-portal.hub-portal--header .topic-menu__toggle::-webkit-details-marker {
+  display: none;
+}
+
+.data-portal.hub-portal--header .topic-menu[open] .topic-menu__arrow {
+  transform: rotate(180deg);
+}
+
+.data-portal.hub-portal--header .topic-menu__toggle:hover,
+.data-portal.hub-portal--header .topic-menu__toggle:focus-visible,
+.data-portal.hub-portal--header .topic-menu[open] > .topic-menu__toggle {
+  border-bottom-color: var(--color-accent);
+}
+
+.data-portal.hub-portal--header .site-brand:focus-visible,
+.data-portal.hub-portal--header .topic-menu__toggle:focus-visible {
+  outline-color: var(--color-focus-on-header);
+}
+
+.data-portal.hub-portal--header .topic-menu__list {
+  position: absolute;
+    z-index: 5;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: 22rem;
+    max-width: calc(100vw - 2rem);
+    max-height: 70vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    background: var(--color-page);
+    color: var(--color-text);
+    box-shadow: var(--shadow-card-active);
+    list-style: none;
+}
+
+.data-portal.hub-portal--header .topic-menu__list a,
+.data-portal.hub-portal--header .topic-menu__unavailable {
+  display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 2.75rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.25rem;
+    color: var(--color-text);
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
+
+.data-portal.hub-portal--header .topic-menu__list a:hover,
+.data-portal.hub-portal--header .topic-menu__list a:focus-visible {
+  background: var(--color-surface-soft);
+}
+
+.data-portal.hub-portal--header .topic-menu__list a:focus-visible {
+  outline-offset: -3px;
+}
+
+.data-portal.hub-portal--header .topic-menu__status {
+  margin-top: 0.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+}
+
+@media (max-width: 50rem) {
+.data-portal.hub-portal--header .site-header__inner {
+  flex-wrap: wrap;
+      padding-block: 0.75rem;
+}
+
+.data-portal.hub-portal--header .site-nav {
+  width: 100%;
+}
+
+.data-portal.hub-portal--header .topic-menu__list {
+  position: static;
+      width: 100%;
+      max-width: none;
+      margin-top: 0.5rem;
+}
+
+.data-portal.hub-portal--header .site-brand__logo {
+  width: 2.75rem;
+      height: 2.75rem;
+}
+}
+
+.data-portal[class*="hub-portal--"] h1,
+.data-portal[class*="hub-portal--"] h2,
+.data-portal[class*="hub-portal--"] h3 {
+  color: inherit;
+}
+
+.data-portal.hub-portal--header .site-nav {
+  background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.data-portal[class*="hub-portal--"] .site-brand {
+  color: var(--color-on-header) !important;
+    text-decoration: none !important;
+}
+
+.data-portal[class*="hub-portal--"] .topic-menu__list a {
+  color: var(--color-text) !important;
+}
